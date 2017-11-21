@@ -1,5 +1,8 @@
 {
-    "files": ["./src"],
+    "files": [
+        // "./src/**/*.san",
+        "./src/**/*.js"
+    ],
     "eslint": {},
     "csshint": {},
     "htmlcs": {},

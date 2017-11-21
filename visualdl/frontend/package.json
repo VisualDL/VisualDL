@@ -10,11 +10,10 @@
     "dev": "cross-env NODE_ENV=dev node tool/dev-server.js",
     "deploy": "fis3 release --root=./dist/ --file=./tool/fis-conf.js",
     "analyzer": "npm run release -- analyzer",
-    "lint": "echo 111 && ./node_modules/fecs/bin/fecs"
+    "lint": "./node_modules/fecs/bin/fecs",
+    "precommit": "npm run lint",
+    "prepush": "npm run lint"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "engines": {
     "node": ">= 6.4.0"
   },
@@ -67,12 +66,12 @@
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.4",
+    "husky": "^0.14.3",
     "json-loader": "^0.5.4",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^1.3.2",
     "ora": "^1.1.0",
     "postcss-loader": "^1.3.3",
-    "pre-commit": "^1.2.2",
     "raw-loader": "^0.5.1",
     "rider": "^2.0.0",
     "san-loader": "^0.0.4",
