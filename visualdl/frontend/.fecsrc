@@ -1,6 +1,19 @@
 {
-    "files": ["./src"],
-    "eslint": {},
+    "files": [
+        "./src/**/*.san",
+        "./src/**/*.js"
+    ],
+    "eslint": {
+        "rules": {
+            "fecs-esnext-ext": [
+                "2",
+                [
+                    "js",
+                    "san"
+                ]
+            ]
+        }
+    },
     "csshint": {},
     "htmlcs": {},
     "jformatter": {},
