@@ -1,0 +1,1 @@
+BUILD_SUBMITTER -x -m baidu/jady/san-searchbi-static -c "cd baidu/jady/san-searchbi-static && sh build.sh" -u ./
