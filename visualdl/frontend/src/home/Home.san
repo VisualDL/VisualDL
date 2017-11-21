@@ -1,0 +1,17 @@
+<template>
+
+<article>
+    <h1>
+        欢迎使用
+    </h1>
+
+</article>
+
+</template>
+
+<script>
+    export default {
+
+    };
+
+</script>
