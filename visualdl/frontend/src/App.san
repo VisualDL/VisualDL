@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <san-appbar title="VisualDL">
-            <div class="user-info app-follow-list" slot="right"></div>
+                <div class="user-info app-follow-list" slot="right"></div>
         </san-appbar>
         <div id="content-container" class="content-container">
             <div id="app-content" class="app-content">
@@ -50,7 +50,7 @@ export default {
     background #fff
     border solid 1px #e4e4e4
     .ftext
-        width: 30%
+       width: 30%
         float: left
         text-align: center
         padding: 30px 0

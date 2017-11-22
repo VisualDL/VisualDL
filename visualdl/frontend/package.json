@@ -10,7 +10,7 @@
     "dev": "cross-env NODE_ENV=dev node tool/dev-server.js",
     "deploy": "fis3 release --root=./dist/ --file=./tool/fis-conf.js",
     "analyzer": "npm run release -- analyzer",
-    "lint": "./node_modules/fecs/bin/fecs",
+    "lint": "./node_modules/fecs/bin/fecs --rule",
     "precommit": "npm run lint",
     "prepush": "npm run lint"
   },

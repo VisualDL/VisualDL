@@ -1,7 +1,8 @@
 {
     "files": [
         "./src/**/*.san",
-        "./src/**/*.js"
+        "./src/**/*.js",
+        "./template/**/*.html"
     ],
     "eslint": {
         "rules": {
