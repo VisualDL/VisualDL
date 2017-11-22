@@ -1,0 +1,23 @@
+<template>
+
+<article>
+    <h1>
+        欢迎使用
+    </h1>
+
+</article>
+
+</template>
+
+
+<script>
+
+    /**
+     * @file generateXLSXandAutoDownload
+     * @author abingblog@gmail.com
+     */
+    export default {
+
+    };
+
+</script>
