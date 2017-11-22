@@ -1,0 +1,23 @@
+<template>
+
+<article>
+    <h1>
+        welcome
+    </h1>
+
+</article>
+
+</template>
+
+
+<script>
+
+    /**
+     * @file wecome file
+     * @author abingblog@gmail.com
+     */
+    export default {
+
+    };
+
+</script>
