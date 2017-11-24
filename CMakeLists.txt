@@ -19,7 +19,7 @@ include(external/glog)      # download, build, install glog
 include(external/gtest)     # download, build, install gtest
 include(external/pybind11)  # download pybind11
 include(external/protobuf)  # download, build, install protobuf
-include(external/python)  # download, build, install protobuf
+include(external/python)    # find python and set path
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
