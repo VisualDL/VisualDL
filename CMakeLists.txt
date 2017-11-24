@@ -12,12 +12,14 @@ set(THIRD_PARTY_PATH "${CMAKE_BINARY_DIR}/third_party" CACHE STRING
 ################################ Configurations #######################################
 option(WITH_TESTING     "Compile VisualDL with unit testing"        ON)
 
+
 include(external/zlib)      # download, build, install zlib
 include(external/gflags)    # download, build, install gflags
 include(external/glog)      # download, build, install glog
 include(external/gtest)     # download, build, install gtest
 include(external/pybind11)  # download pybind11
 include(external/protobuf)  # download, build, install protobuf
+include(external/python)  # download, build, install protobuf
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -26,21 +28,7 @@ include_directories(${PROJECT_SOURCE_DIR}/thirdparty/local/include)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/visualdl/backend/storage)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/visualdl/backend/logic)
 
-#include_directories("${PADDLE_SOURCE_DIR}")
-#
-#include_directories(/usr/include/python2.7)
-
-#set(PYBIND11_CPP_STANDARD -std=c++11)
-#add_subdirectory(${PROJECT_SOURCE_DIR}/thirdparty/pybind11-2.2.1)
-#
-#link_directories(${PROJECT_SOURCE_DIR}/thirdparty/local/lib)
-
-#pybind11_add_module(core
-#        ${PROJECT_SOURCE_DIR}/visualdl/backend/logic/pybind.cc)
-#target_link_libraries(core PRIVATE pybind11::module im storage sdk protobuf glog)
-#set_target_properties(core PROPERTIES POSITION_INDEPENDENT_CODE TRUE)
-
-#add_executable(vl_test
-#        ${PROJECT_SOURCE_DIR}/visualdl/backend/test.cc
-#        ${PROJECT_SOURCE_DIR}/visualdl/backend/logic/im_test.cc)
-#target_link_libraries(vl_test storage im gtest glog protobuf gflags)
+add_executable(vl_test
+        ${PROJECT_SOURCE_DIR}/visualdl/backend/test.cc
+        ${PROJECT_SOURCE_DIR}/visualdl/backend/logic/im_test.cc)
+target_link_libraries(vl_test storage im gtest glog protobuf gflags)

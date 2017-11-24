@@ -1,4 +1,4 @@
-# Copyright (c) 2016 PaddlePaddle Authors. All Rights Reserve.
+# Copyright (c) 2017 VisualDL Authors. All Rights Reserve.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ ExternalProject_Add(
         extern_pybind
         ${EXTERNAL_PROJECT_LOG_ARGS}
         GIT_REPOSITORY  "https://github.com/pybind/pybind11.git"
-        GIT_TAG         "v2.2.1"
+        GIT_TAG         "v2.1.1"
         PREFIX          ${PYBIND_SOURCE_DIR}
         UPDATE_COMMAND  ""
         CONFIGURE_COMMAND ""
