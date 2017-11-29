@@ -40,6 +40,21 @@ static_file_path = "./frontend/dist/"
 mock_data_path = "./mock_data/"
 
 
+# return data
+# status, msg, data
+def gen_result(status, msg, data):
+    """
+    :param status:
+    :param msg:
+    :return:
+    """
+    result = dict()
+    result['status'] = status
+    result['msg'] = msg
+    result['data'] = data
+    return result
+
+
 @app.route("/")
 def index():
     return redirect('/static/index.html', code=302)
@@ -53,19 +68,22 @@ def serve_static(filename):
 
 @app.route('/data/logdir')
 def logdir():
-    return json.dumps({"logdir": options.logdir})
+    result = gen_result(0, "", {"logdir": options.logdir})
+    return json.dumps(result)
 
 
 @app.route('/data/runs')
 def runs():
     is_debug = bool(request.args.get('debug'))
-    return json.dumps(["train", "test"])
+    result = gen_result(0, "", ["train", "test"])
+    return json.dumps(result)
 
 
 @app.route("/data/plugin/scalars/tags")
 def tags():
     is_debug = bool(request.args.get('debug'))
-    return json.dumps(["acc", "loss"])
+    result = gen_result(0, "", ["acc", "loss"])
+    return json.dumps(result)
 
 
 @app.route('/data/plugin/scalars/scalars')
@@ -73,7 +91,8 @@ def scalars():
     run = request.args.get('run')
     tag = request.args.get('tag')
     is_debug = bool(request.args.get('debug'))
-    return json.dumps(mock_data.sequence_data())
+    result = gen_result(0, "", mock_data.sequence_data())
+    return json.dumps(result)
 
 
 if __name__ == '__main__':
