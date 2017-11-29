@@ -8,6 +8,7 @@ from optparse import OptionParser
 from flask import Flask, redirect
 from flask import request
 from flask import send_from_directory
+from flask import Response
 
 from visualdl.log import logger
 import visualdl.mock.data as mock_data
@@ -69,21 +70,21 @@ def serve_static(filename):
 @app.route('/data/logdir')
 def logdir():
     result = gen_result(0, "", {"logdir": options.logdir})
-    return json.dumps(result)
+    return Response(json.dumps(result), mimetype='application/json')
 
 
 @app.route('/data/runs')
 def runs():
     is_debug = bool(request.args.get('debug'))
     result = gen_result(0, "", ["train", "test"])
-    return json.dumps(result)
+    return Response(json.dumps(result), mimetype='application/json')
 
 
 @app.route("/data/plugin/scalars/tags")
 def tags():
     is_debug = bool(request.args.get('debug'))
     result = gen_result(0, "", ["acc", "loss"])
-    return json.dumps(result)
+    return Response(json.dumps(result), mimetype='application/json')
 
 
 @app.route('/data/plugin/scalars/scalars')
@@ -92,7 +93,7 @@ def scalars():
     tag = request.args.get('tag')
     is_debug = bool(request.args.get('debug'))
     result = gen_result(0, "", mock_data.sequence_data())
-    return json.dumps(result)
+    return Response(json.dumps(result), mimetype='application/json')
 
 
 if __name__ == '__main__':
