@@ -12,6 +12,7 @@ from flask import Response
 
 from visualdl.log import logger
 import visualdl.mock.data as mock_data
+import visualdl.mock.tags as mock_tags
 
 app = Flask(__name__, static_url_path="")
 
@@ -83,7 +84,7 @@ def runs():
 @app.route("/data/plugin/scalars/tags")
 def tags():
     is_debug = bool(request.args.get('debug'))
-    result = gen_result(0, "", ["acc", "loss"])
+    result = gen_result(0, "", mock_tags.data())
     return Response(json.dumps(result), mimetype='application/json')
 
 
