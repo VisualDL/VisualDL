@@ -36,6 +36,7 @@ def option_parser():
 options, args = option_parser()
 server_path = os.path.abspath(os.path.dirname(sys.argv[0]))
 static_file_path = "../visualdl/frontend/dist/"
+mock_data_path = "../visualdl/backend/mock_data/"
 
 
 @app.route("/")
@@ -56,19 +57,22 @@ def logdir():
 
 @app.route('/data/runs')
 def runs():
-    return ["train", "test"]
+    is_debug = bool(request.args.get('debug'))
+    return json.dumps(["train", "test"])
 
 
 @app.route("/data/plugin/scalars/tags")
 def tags():
-    return ["", ""]
+    is_debug = bool(request.args.get('debug'))
+    return json.dumps(["acc", "loss"])
 
 
 @app.route('/data/plugin/scalars/scalars')
 def scalars():
     run = request.args.get('run')
     tag = request.args.get('tag')
-    return None
+    is_debug = bool(request.args.get('debug'))
+    return json.dumps([run, tag, is_debug])
 
 
 if __name__ == '__main__':
