@@ -35,8 +35,8 @@ def option_parser():
 
 options, args = option_parser()
 server_path = os.path.abspath(os.path.dirname(sys.argv[0]))
-static_file_path = "../visualdl/frontend/dist/"
-mock_data_path = "../visualdl/backend/mock_data/"
+static_file_path = "./frontend/dist/"
+mock_data_path = "./mock_data/"
 
 
 @app.route("/")
