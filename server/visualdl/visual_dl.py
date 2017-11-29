@@ -10,6 +10,7 @@ from flask import request
 from flask import send_from_directory
 
 from visualdl.log import logger
+import visualdl.mock.data as mock_data
 
 app = Flask(__name__, static_url_path="")
 
@@ -72,7 +73,7 @@ def scalars():
     run = request.args.get('run')
     tag = request.args.get('tag')
     is_debug = bool(request.args.get('debug'))
-    return json.dumps([run, tag, is_debug])
+    return json.dumps(mock_data.sequence_data())
 
 
 if __name__ == '__main__':
