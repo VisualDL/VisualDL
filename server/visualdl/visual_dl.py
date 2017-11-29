@@ -4,12 +4,12 @@ import json
 import os
 import sys
 from optparse import OptionParser
-from flask import request
 
 from flask import Flask, redirect
+from flask import request
 from flask import send_from_directory
 
-from visualdl.log import logger
+from visualdl import logger
 
 app = Flask(__name__, static_url_path="")
 
