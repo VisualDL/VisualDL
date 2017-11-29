@@ -9,7 +9,7 @@ from flask import Flask, redirect
 from flask import request
 from flask import send_from_directory
 
-from visualdl import logger
+from visualdl.log import logger
 
 app = Flask(__name__, static_url_path="")
 
